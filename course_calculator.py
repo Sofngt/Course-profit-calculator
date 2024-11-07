@@ -66,6 +66,20 @@ st.markdown(
         margin: 0;
         padding: 0;
         font-size: 35px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }}
+
+    /* Responsive styling for smaller screens */
+    @media (max-width: 768px) {{
+        .header .title {{
+            font-size: 18px; /* Adjust font size for smaller screens */
+        }}
+        .header .title-container {{
+            padding: 5px; /* Adjust padding for smaller screens */
+        }}
     }}
     </style>
     <div class="header">
