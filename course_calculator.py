@@ -316,11 +316,4 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Load the logo image
-logo = Image.open("/Users/sofiadiaz/Desktop/Lead Magnet B/logo.png")
-
-# Convert the PIL image to a base64 string
-buffer = BytesIO()
-logo.save(buffer, format="PNG")
-logo_base64 = base64.b64encode(buffer.getvalue()).decode()
 
