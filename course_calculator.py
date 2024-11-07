@@ -76,8 +76,11 @@ st.markdown(
     @media (max-width: 768px) {{
         .header .title {{
             font-size: 18px; /* Adjust font size for smaller screens */
+            text-align: center;
         }}
         .header .title-container {{
+            justify-content: center;
+            flex-gow: 1;
             padding: 5px; /* Adjust padding for smaller screens */
         }}
     }}
