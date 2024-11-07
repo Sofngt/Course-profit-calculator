@@ -391,17 +391,16 @@ if st.button("Calculate"):
 if st.button("📈 Want to boost your earnings? Book a free strategy call with NGT Media 🚀"):
     # Inject JavaScript to track event with Google Analytics
     st.markdown(
-        """
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'cta_button_click',
-                'eventCategory': 'CTA Button',
-                'eventAction': 'click',
-                'eventLabel': 'NGT Media Strategy Call'
-            });
-            window.open("https://app.lemcal.com/@sofiadiaz/course-profit-boost-", "_blank");
-        </script>
-        """,
-        unsafe_allow_html=True
-    )
+    f"""
+    <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" 
+       onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({{
+           'event': 'cta_button_click',
+           'eventCategory': 'CTA Button',
+           'eventAction': 'click',
+           'eventLabel': 'NGT Media Strategy Call'
+       }});">
+        📈 Want to boost your earnings? Book a free strategy call with NGT Media 🚀
+    </a>
+    """,
+    unsafe_allow_html=True
+)
