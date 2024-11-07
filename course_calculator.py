@@ -391,6 +391,7 @@ if st.button("Calculate"):
 # Add the call-to-action button using st.button
 if st.button("📈 Want to boost your earnings? Book a free strategy call with NGT Media 🚀"):
     # Inject JavaScript to track event with Google Analytics and open the link
+    
     st.markdown(
     """
     <style>
