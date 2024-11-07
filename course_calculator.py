@@ -20,8 +20,15 @@ st.markdown(
     </script>
     """,
     unsafe_allow_html=True
+
 )
 
+# Capture the lead_id from the URL if it exists
+query_params = st.experimental_get_query_params()
+lead_id = query_params.get('lead_id', [None])[0]  # Get the 'lead_id' parameter if present
+if lead_id:
+    st.write(f"Welcome, Lead ID: {lead_id}")  # Display lead ID (optional, for testing purposes)
+    # Optionally, you can log or track this lead ID as needed in your system
 # Set up custom styling for the background, text color, and button color
 
 # Setting page style with custom CSS
@@ -235,6 +242,40 @@ if st.button("Calculate"):
         course_udemy_monthly_revenue = instructor_revenue + organic_revenue + affiliate_revenue
         total_udemy_monthly_revenue += course_udemy_monthly_revenue
         total_own_platform_monthly_revenue += own_platform_revenue
+
+        st.markdown(
+        f"""
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            // Track number of courses
+            window.dataLayer.push({{
+                'event': 'user_input',
+                'eventCategory': 'Calculator Input',
+                'eventAction': 'num_courses',
+                'eventLabel': 'Number of Courses',
+                'eventValue': '{num_courses}'
+            }});
+            {''.join([
+                f"""
+                // Track inputs for Course {i+1}
+                window.dataLayer.push({{
+                    'event': 'user_input',
+                    'eventCategory': 'Calculator Input',
+                    'eventAction': 'course_{i+1}_inputs',
+                    'coursePrice': '{course_prices[i]}',
+                    'monthlySales': '{course_sales[i]}',
+                    'instructorPct': '{instructor_sales[i]*100}',
+                    'organicPct': '{organic_sales[i]*100}',
+                    'affiliatePct': '{affiliate_sales[i]*100}'
+                    'leadId': '{lead_id}'
+                }});
+                """ for i in range(num_courses)
+            ])}
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
+
 
         # Display per-course revenue breakdown
         st.write(f"**Course {idx + 1} Revenue Breakdown**")
