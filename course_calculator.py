@@ -74,14 +74,23 @@ st.markdown(
 
     /* Responsive styling for smaller screens */
     @media (max-width: 768px) {{
+        .header {{
+            flex-direction: column;
+            align-items: center;
+        
+        }}
         .header .title {{
-            font-size: 18px; /* Adjust font size for smaller screens */
-            text-align: center;
+            font-size: 24px; /* Reduce the font size for smaller screens */
+            text-align: center; /* Ensure text alignment is centered */
+            
         }}
         .header .title-container {{
-            justify-content: center;
-            flex-gow: 1;
-            padding: 5px; /* Adjust padding for smaller screens */
+            margin-left: 0; /* Remove any left margin */
+            padding-left: 0;
+            text-align: center; /* Center the text */
+        }}
+        .header .logo{{
+            margin-bottom: 10px;
         }}
     }}
     </style>
