@@ -103,12 +103,26 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 st.markdown(
     '<p style="font-size:25px;">Turn Your Courses into Profit Machines! Stop Losing Profits to Udemy—Discover what you could really be earning by publishing your course on your own website! 📊 🚀</p>',
     unsafe_allow_html=True
 )
 import time
+st.markdown(
+    """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T91J78LJNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'G-T91J78LJNN');
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 progress_bar = st.progress(0)
 for i in range(100):
     time.sleep(0.01)
