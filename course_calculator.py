@@ -36,7 +36,7 @@ st.markdown(
 )
 
 # Load the logo image
-logo = Image.open("/Users/sofiadiaz/Desktop/Lead Magnet B/logo.png")
+logo = Image.open("images/logo.png")
 
 # Convert the PIL image to a base64 string
 buffer = BytesIO()
