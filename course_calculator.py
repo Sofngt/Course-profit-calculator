@@ -416,7 +416,6 @@ if st.button("📈 Want to boost your earnings? Book a free strategy call with N
     }
     </style>
     <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" onclick="trackButtonClick()">
-        📈 Want to boost your earnings? Book a free strategy call with NGT Media 🚀
     </a>
     <script>
         function trackButtonClick() {
