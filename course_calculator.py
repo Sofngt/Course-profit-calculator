@@ -388,19 +388,21 @@ if st.button("Calculate"):
 )
 
 # Add the call-to-action button
+# Add the call-to-action button using st.button
 if st.button("📈 Want to boost your earnings? Book a free strategy call with NGT Media 🚀"):
-    # Inject JavaScript to track event with Google Analytics
+    # Inject JavaScript to track event with Google Analytics and open the link
     st.markdown(
-    f"""
-    <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" 
-       onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({{
-           'event': 'cta_button_click',
-           'eventCategory': 'CTA Button',
-           'eventAction': 'click',
-           'eventLabel': 'NGT Media Strategy Call'
-       }});">
-        📈 Want to boost your earnings? Book a free strategy call with NGT Media 🚀
-    </a>
-    """,
-    unsafe_allow_html=True
-)
+        f"""
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({{
+                'event': 'cta_button_click',
+                'eventCategory': 'CTA Button',
+                'eventAction': 'click',
+                'eventLabel': 'NGT Media Strategy Call'
+            }});
+            window.open("https://app.lemcal.com/@sofiadiaz/course-profit-boost-", "_blank");
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
