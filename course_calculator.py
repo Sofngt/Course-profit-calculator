@@ -389,10 +389,7 @@ if st.button("Calculate"):
 
 # Add the call-to-action button
 # Add the call-to-action button using st.button
-if st.button("📈 Want to boost your earnings now?"):
-    # Inject JavaScript to track event with Google Analytics and open the link
-    
-    st.markdown(
+st.markdown(
     """
     <style>
     .cta-button {
@@ -416,7 +413,7 @@ if st.button("📈 Want to boost your earnings now?"):
     }
     </style>
     <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" onclick="trackButtonClick()">
-     "Book a free strategy call with NGT Media 🚀"
+        📈 Want to boost your earnings now?
     </a>
     <script>
         function trackButtonClick() {
