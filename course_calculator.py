@@ -1,3 +1,13 @@
+import streamlit as st
+import pandas as pd
+import numpy as np 
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+import matplotlib.patches as patches
+from PIL import Image
+import base64
+from io import BytesIO
+import time
 st.markdown(
     """
     <!-- Google tag (gtag.js) -->
@@ -11,17 +21,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-import streamlit as st
-import pandas as pd
-import numpy as np 
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-import matplotlib.patches as patches
-from PIL import Image
-import base64
-from io import BytesIO
-import time
-
 
 # Include a noscript tag to handle cases where JS is disabled
 st.markdown(
