@@ -1,3 +1,16 @@
+st.markdown(
+    """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T91J78LJNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T91J78LJNN');
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 import streamlit as st
 import pandas as pd
 import numpy as np 
@@ -8,20 +21,7 @@ from PIL import Image
 import base64
 from io import BytesIO
 import time
-st.markdown(
-    """
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T91J78LJNN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-T91J78LJNN');
-    </script>
-    """,
-    unsafe_allow_html=True
-)
 
 # Include a noscript tag to handle cases where JS is disabled
 st.markdown(
