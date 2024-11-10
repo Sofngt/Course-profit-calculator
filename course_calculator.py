@@ -10,7 +10,7 @@ from io import BytesIO
 import time
 st.markdown(
     """
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (Head) -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -19,7 +19,13 @@ st.markdown(
       })(window,document,'script','dataLayer','GTM-52GRQSL');
     </script>
     <!-- End Google Tag Manager -->
+    """,
+    unsafe_allow_html=True
+)
 
+# Include a noscript tag to handle cases where JS is disabled
+st.markdown(
+    """
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52GRQSL"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
