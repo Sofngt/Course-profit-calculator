@@ -7,7 +7,7 @@ import base64
 from io import BytesIO
 import time
 
-# Google Tag Manager integration
+# Corrected Google Tag Manager integration
 st.markdown(
     """
     <!-- Google Tag Manager -->
@@ -23,7 +23,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# noscript tag for GTM
+# Corrected noscript tag for GTM
 st.markdown(
     """
     <!-- Google Tag Manager (noscript) -->
