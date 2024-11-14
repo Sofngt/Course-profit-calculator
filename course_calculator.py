@@ -34,12 +34,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Capture lead_id from URL query parameters
-# Old way
-query_params = st.experimental_get_query_params()
-
-# New way
-query_params = st.query_params()
+# Capture lead_id from URL query parameters using the updated Streamlit property
+query_params = st.query_params
 lead_id = query_params.get('lead_id', [None])[0]
 if lead_id:
     st.write(f"Welcome, Lead ID: {lead_id}")
