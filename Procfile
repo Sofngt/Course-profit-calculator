@@ -1,0 +1,1 @@
+web: streamlit run course_calculator.py --server.port $PORT
