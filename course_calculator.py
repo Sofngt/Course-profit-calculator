@@ -35,7 +35,7 @@ st.markdown(
 )
 
 # Capture lead_id from URL query parameters
-query_params = st.experimental_get_query_params()
+query_params = st.query_params()
 lead_id = query_params.get('lead_id', [None])[0]
 if lead_id:
     st.write(f"Welcome, Lead ID: {lead_id}")
