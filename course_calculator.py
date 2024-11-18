@@ -6,6 +6,7 @@ from PIL import Image
 import base64
 from io import BytesIO
 import time
+import analytics
 
 
 st.markdown(
@@ -21,6 +22,9 @@ st.markdown(
 )
 
 
+
+# Setup Segment analytics
+analytics.write_key = '7ZI7WXc6Ke0Y5VKYk4OGYtxDdpU0FTTC'
 
 
 # Capture lead_id from URL query parameters using the updated Streamlit property
@@ -138,7 +142,7 @@ for i in range(num_courses):
 udemy_fees = {"instructor": 0.03, "organic": 0.37, "affiliate": 0.75}
 own_platform_fee = 0.10
 
-import analytics
+
 analytics.write_key = '7ZI7WXc6Ke0Y5VKYk4OGYtxDdpU0FTTC'
 # Revenue calculation and display
 if st.button("Calculate"):
