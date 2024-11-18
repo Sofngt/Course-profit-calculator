@@ -229,36 +229,36 @@ if st.button("Calculate"):
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-    # Call-to-action button
-    st.markdown(
-        """
-        <style>
-        .cta-button {
-            background-color: #FF6F61;
-            color: white;
-            font-size: 18px;
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 30px;
-            font-weight: bold;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #FF3B2D;
-            transform: scale(1.05);
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-        }
-        </style>
-        <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" onclick="trackButtonClick()">
-            📈 Want to boost your earnings now? Book a free strategy call with NGT Media 🚀
-        </a>
-        <script>
-            function trackButtonClick() {
-                window.analytics.track('CTA Button Clicked', {
+    # Call-to-action button with tracking
+st.markdown(
+    """
+    <style>
+    .cta-button {
+        background-color: #FF6F61;
+        color: white;
+        font-size: 18px;
+        padding: 15px 30px;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 30px;
+        font-weight: bold;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #FF3B2D;
+        transform: scale(1.05);
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    </style>
+    <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" onclick="trackCTAClick()">
+        📈 Want to boost your earnings now? Book a free strategy call with NGT Media 🚀
+    </a>
+    <script>
+    function trackCTAClick() {
+        window.analytics.track('CTA Button Clicked', {
             category: 'CTA Button',
             label: 'NGT Media Strategy Call'
         });
