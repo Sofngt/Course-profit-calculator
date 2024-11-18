@@ -3,3 +3,4 @@ pandas
 numpy
 matplotlib
 Pillow
+analytics-python==1.4.0
