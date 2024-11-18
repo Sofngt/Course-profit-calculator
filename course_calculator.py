@@ -258,15 +258,12 @@ if st.button("Calculate"):
         </a>
         <script>
             function trackButtonClick() {
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    'event': 'cta_button_click',
-                    'eventCategory': 'CTA Button',
-                    'eventAction': 'click',
-                    'eventLabel': 'NGT Media Strategy Call'
-                });
-            }
-        </script>
-        """,
-        unsafe_allow_html=True
-    )
+                window.analytics.track('CTA Button Clicked', {
+            category: 'CTA Button',
+            label: 'NGT Media Strategy Call'
+        });
+    }
+    </script>
+    """,
+    unsafe_allow_html=True
+)
