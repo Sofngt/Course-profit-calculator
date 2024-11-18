@@ -7,7 +7,7 @@ import base64
 from io import BytesIO
 import time
 
-# Google Analytics 4 tag integration
+
 st.markdown(
     """
     <script>
@@ -19,7 +19,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-# Google Tag Manager integration (noscript)
+
 
 
 
@@ -138,6 +138,8 @@ for i in range(num_courses):
 udemy_fees = {"instructor": 0.03, "organic": 0.37, "affiliate": 0.75}
 own_platform_fee = 0.10
 
+import analytics
+analytics.write_key = '7ZI7WXc6Ke0Y5VKYk4OGYtxDdpU0FTTC'
 # Revenue calculation and display
 if st.button("Calculate"):
     total_udemy_monthly_revenue = 0
@@ -158,19 +160,32 @@ if st.button("Calculate"):
         udemy_affiliate_earnings.append(affiliate_revenue)
         own_platform_earnings.append(own_platform_revenue)
 
-        total_udemy_monthly_revenue += instructor_revenue + organic_revenue + affiliate_revenue
-        total_own_platform_monthly_revenue += own_platform_revenue
+    total_udemy_monthly_revenue += sum(udemy_instructor_earnings) + sum(udemy_organic_earnings) + sum(udemy_affiliate_earnings)
+    total_own_platform_monthly_revenue += sum(own_platform_earnings)
 
-        st.write(f"**Course {idx + 1} Revenue Breakdown**")
-        st.write(f"Udemy Monthly Revenue: ${instructor_revenue + organic_revenue + affiliate_revenue:,.2f}")
-        st.write(f"Own Platform Monthly Revenue: ${own_platform_revenue:,.2f}")
-        st.write("—" * 30)
+    # Segment track event for calculation
+    course_data = {
+        "prices": course_prices,
+        "sales": course_sales,
+        "instructor_sales": instructor_sales,
+        "organic_sales": organic_sales,
+        "affiliate_sales": affiliate_sales
+    }
+    analytics.track(lead_id, 'Calculate Revenue', {
+        "course_data": course_data,
+        "total_udemy_revenue": total_udemy_monthly_revenue,
+        "total_own_platform_revenue": total_own_platform_monthly_revenue
+    })
 
-    st.write("### Total Monthly and Yearly Revenue Comparison")
+    # Display results or updates on your Streamlit UI
+    st.write("Calculation Complete. Data Sent to Segment.")
+    st.write(f"**Total Monthly and Yearly Revenue Comparison**")
     st.write(f"Total Udemy Monthly Revenue: ${total_udemy_monthly_revenue:,.2f}")
     st.write(f"Total Own Platform Monthly Revenue: ${total_own_platform_monthly_revenue:,.2f}")
     st.write(f"Total Udemy Yearly Revenue: ${total_udemy_monthly_revenue * 12:,.2f}")
     st.write(f"Total Own Platform Yearly Revenue: ${total_own_platform_monthly_revenue * 12:,.2f}")
+
+    # Additional UI updates can continue below
     # Chart for revenue comparison
     fig, ax = plt.subplots(figsize=(12, 6))
     bar_width = 0.1  # Width of the bars
