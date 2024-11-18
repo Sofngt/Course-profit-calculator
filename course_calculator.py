@@ -230,6 +230,8 @@ if st.button("Calculate"):
     st.pyplot(fig)
 
     # Call-to-action button with tracking
+# Add this code to your Streamlit app where you define the HTML for the CTA button
+
 st.markdown(
     """
     <style>
@@ -253,15 +255,18 @@ st.markdown(
         box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
     }
     </style>
-    <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" onclick="trackCTAClick()">
+    <a href="https://app.lemcal.com/@sofiadiaz/course-profit-boost-" target="_blank" class="cta-button" onclick="trackCTAButton()">
         📈 Want to boost your earnings now? Book a free strategy call with NGT Media 🚀
     </a>
     <script>
-    function trackCTAClick() {
-        window.analytics.track('CTA Button Clicked', {
-            category: 'CTA Button',
-            label: 'NGT Media Strategy Call'
-        });
+    function trackCTAButton() {
+        if (window.analytics) {
+            window.analytics.track('CTA Button Clicked', {
+                eventCategory: 'CTA Button',
+                eventAction: 'click',
+                eventLabel: 'NGT Media Strategy Call'
+            });
+        }
     }
     </script>
     """,
