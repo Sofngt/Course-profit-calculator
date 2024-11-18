@@ -30,8 +30,10 @@ analytics.write_key = '7ZI7WXc6Ke0Y5VKYk4OGYtxDdpU0FTTC'
 # Capture lead_id from URL query parameters using the updated Streamlit property
 query_params = st.query_params
 lead_id = query_params.get('lead_id', [None])[0]
-if lead_id:
-    st.write(f"Welcome, Lead ID: {lead_id}")
+if not lead_id:
+    lead_id = 'anonymous_' + str(int(time.time()))  # Generates a temporary anonymous ID based on the current time
+
+
 
 # Page styling with custom CSS
 st.markdown(
