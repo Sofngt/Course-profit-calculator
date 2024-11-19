@@ -184,6 +184,7 @@ if st.button("Calculate"):
     })
 
     # Display results or updates on your Streamlit UI
+    # Display results or updates on your Streamlit UI
     st.markdown("### Revenue Comparison Results", unsafe_allow_html=True)
     st.markdown("#### Here's what you could be earning:")
     st.markdown(f"**Monthly Revenue**", unsafe_allow_html=True)
@@ -197,11 +198,8 @@ if st.button("Calculate"):
     st.markdown(f"- Yearly: **${(total_own_platform_monthly_revenue - total_udemy_monthly_revenue) * 12:,.2f}**", unsafe_allow_html=True)
 
 # Add a visual separator for clarity
-st.markdown("---")
+    st.markdown("---")
 
-
-# Add a visual separator for clarity
-st.markdown("---")
   
 
     # Additional UI updates can continue below
