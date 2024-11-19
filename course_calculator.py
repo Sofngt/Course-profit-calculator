@@ -184,12 +184,25 @@ if st.button("Calculate"):
     })
 
     # Display results or updates on your Streamlit UI
-    st.write("Calculation Complete. Data Sent to Segment.")
-    st.write(f"**Total Monthly and Yearly Revenue Comparison**")
-    st.write(f"Total Udemy Monthly Revenue: ${total_udemy_monthly_revenue:,.2f}")
-    st.write(f"Total Own Platform Monthly Revenue: ${total_own_platform_monthly_revenue:,.2f}")
-    st.write(f"Total Udemy Yearly Revenue: ${total_udemy_monthly_revenue * 12:,.2f}")
-    st.write(f"Total Own Platform Yearly Revenue: ${total_own_platform_monthly_revenue * 12:,.2f}")
+    st.markdown("### Revenue Comparison Results", unsafe_allow_html=True)
+    st.markdown("#### Here's what you could be earning:")
+    st.markdown(f"**Monthly Revenue**", unsafe_allow_html=True)
+    st.markdown(f"- Udemy: **${total_udemy_monthly_revenue:,.2f}**", unsafe_allow_html=True)
+    st.markdown(f"- Your Platform: **${total_own_platform_monthly_revenue:,.2f}**", unsafe_allow_html=True)
+    st.markdown(f"**Yearly Revenue**", unsafe_allow_html=True)
+    st.markdown(f"- Udemy: **${total_udemy_monthly_revenue * 12:,.2f}**", unsafe_allow_html=True)
+    st.markdown(f"- Your Platform: **${total_own_platform_monthly_revenue * 12:,.2f}**", unsafe_allow_html=True)
+    st.markdown("#### Potential Earnings Increase")
+    st.markdown(f"- Monthly: **${total_own_platform_monthly_revenue - total_udemy_monthly_revenue:,.2f}**", unsafe_allow_html=True)
+    st.markdown(f"- Yearly: **${(total_own_platform_monthly_revenue - total_udemy_monthly_revenue) * 12:,.2f}**", unsafe_allow_html=True)
+
+# Add a visual separator for clarity
+st.markdown("---")
+
+
+# Add a visual separator for clarity
+st.markdown("---")
+  
 
     # Additional UI updates can continue below
     # Chart for revenue comparison
@@ -268,7 +281,7 @@ st.markdown(
             });
         }
     }
-    </script>
+    </script> 
     """,
     unsafe_allow_html=True
 )
